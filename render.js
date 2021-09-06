@@ -13,6 +13,9 @@ var cmd=require('node-cmd');
              var newValue = data.replace(/name/gim, 'email');
          } else if (arr[0] === "email"){
              var newValue = data.replace(/email/gim, 'name');
+         } else {
+             arr[0] = "name"
+             var newValue = data.replace(/name/gim, 'email');
          }
       
          fs.writeFile('index.txt', newValue, 'utf-8', function(err, data) {
